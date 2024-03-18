@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('echat.db')
+conn = sqlite3.connect('echat/db/echat.db')
 cursor = conn.cursor()
 
 def insert_user(username, password_hash, access_level=0):

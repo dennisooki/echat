@@ -2,6 +2,8 @@
 
 from tkinter import *
 from tkinter import messagebox
+
+from echat.chatserver.client import Client
 from ..chatclient.client_auth import user_login, user_register
 from .chat_screen import chat_screen
 
@@ -30,7 +32,9 @@ def login_screen():
         #if loginBool is true navigate to chat screen and destroy login screen
         if loginBool:
             root.destroy()
-            chat_screen(username)
+            client = Client(username,'localhost',12345)
+            client.connect()
+            chat_screen(username, client)
         
 
     login_button = Button(root, text="Login", command=login_event)

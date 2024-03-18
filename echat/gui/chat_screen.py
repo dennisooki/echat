@@ -1,8 +1,10 @@
 #create a basic chat screen in tkinter with an input box and a send button
+import threading
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText
 
-def chat_screen(username):
+
+def chat_screen(username, client):
     root = Tk()
     root.title(f"eChat: {username}")
     root.geometry("400x500")
@@ -21,15 +23,21 @@ def chat_screen(username):
     input_box = Entry(root, width=50)
     input_box.pack()
 
-    def send_message(message, username, chat_box):
-        chat_box['state'] = 'normal'  # Enable the text box
-        chat_box.insert(END, f"{username}: {message}\n")
-        chat_box['state'] = 'disabled'  # Disable the text box again
+    def send_message(message, chat_box):
+        message = input_box.get()
+        client.send_message(message)  # Use the client's send_message method
         input_box.delete(0, END)
 
-    #create a button to send the message
-    send_button = Button(root, text="Send", command=lambda: send_message(input_box.get(),username, chat_box))
-    send_button.pack()
+    def exit_chat():
+        client.disconnect()
+        root.destroy()
 
+    exit_button = Button(root, text="Exit", command=exit_chat)
+    exit_button.pack()
+
+    #create a button to send the message
+    send_button = Button(root, text="Send", command=lambda: send_message(input_box.get(), chat_box))
+    send_button.pack()
+    threading.Thread(target=client.receive_messages, args=(chat_box,)).start()
     root.mainloop()
     
