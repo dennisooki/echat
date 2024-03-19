@@ -1,4 +1,3 @@
-#create a basic chat screen in tkinter with an input box and a send button
 import threading
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText

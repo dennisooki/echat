@@ -1,2 +1,27 @@
-# created by virtualenv automatically
+# Virtual environment
+venv/
+env/
+*.pyc
 
+# Dependencies
+bin/
+lib/
+include/
+/.Python
+pip-log.txt
+pip-delete-this-directory.txt
+pyvenv.cfg
+
+# Pyenv
+.pyenv/
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Other
+.DS_Store
+*.swp
+*~

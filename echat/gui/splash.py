@@ -1,4 +1,3 @@
-#implement a splash screen that will show for 3 seconds using tkinter in a callable function, after the 3 seconds it should display the login screen from login.py from function login_screen()
 from tkinter import *  
 import time
 from .login_screen import login_screen

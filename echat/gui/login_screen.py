@@ -1,4 +1,3 @@
-#implement a simple login screen with  username and password fields centered in a callable function named login_screen(), the input should be passed to a function called login_handler() with a TODO attestaion, also add a register button that navigates to register_screen()
 
 from tkinter import *
 from tkinter import messagebox
