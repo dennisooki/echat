@@ -32,4 +32,6 @@ git clone https://github.com/dennisooki/echat
    - Ensure that all clients have exited.
    - Press `Ctrl+C` in the server terminal to close the server.
 
+
+If you run into problems try looking for the pycache folders and deleting them, ik one is in echat/gui but there may be more just check.
 Please note that these instructions assume you have Git and Python installed on your system.
