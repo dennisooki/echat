@@ -1,4 +1,4 @@
-To run the echat project, you can follow these steps:
+How 2 run
 
 1. Clone the repository using the following command:
 ```
